@@ -58,4 +58,11 @@ pick the best-sized image based on its own understanding of how it will render t
 {{else if default_image}}src="{{cdn default_image}}" alt="{{lang 'products.card_default_image_alt'}}"{{/if}}
 class="{{#unless lazyload '==' 'disabled'}}lazyload{{/unless}}{{#if class}} {{class}}{{/if}}"
 {{#if lazyload '==' 'lazyload'}}loading="lazy"{{/if}}
+{{#if rollover_image}}{{!--
+   --}}rollover_src="{{getImageSrcset rollover_image 1x=(default fallback_size '160w')}}" {{!--
+   --}}{{#if lazyload '==' 'lazyload+lqip'}}rollover_srcset="{{getImageSrcset rollover_image 1x=(default lqip_size '80w')}}"{{!--
+   --}}{{else}}rollover_srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="{{/if}}{{!--
+   --}}{{#unless lazyload '==' 'disabled'}}data-{{/unless}}rollover_srcset="{{getImageSrcset rollover_image use_default_sizes=true }}"
+   --}}rollover_alt="{{rollover_image.alt}}"{{!--
+--}}{{/if}}
 {{otherAttributes}} />

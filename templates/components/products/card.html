@@ -23,7 +23,8 @@
         >
             <div class="card-img-container">
                 {{> components/common/responsive-img
-                    image=image
+                    image=images.[0]
+                    rollover_image=images.[1]
                     class="card-image"
                     fallback_size=theme_settings.productgallery_size
                     lazyload=theme_settings.lazyload_mode

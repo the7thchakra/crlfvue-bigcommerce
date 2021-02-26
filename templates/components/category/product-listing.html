@@ -1,6 +1,22 @@
 {{#if category.products}}
     {{> components/products/filter sort=pagination.category.sort}}
 
+    <div data-all-items-removed style="display: none;">{{lang 'categories.all_items_removed'}}</div>
+    <div data-all-items-added style="display: none;">{{lang 'categories.all_items_added'}}</div>
+
+    <fieldset class="form-fieldset actionBar-section">
+        <div class="form-field">
+            <button type="button" data-button-type="add-all-to-cart">{{lang 'categories.add_all_to_cart'}}</button>
+        </div>
+
+        {{#if cart.quantity}}
+        <div class="form-field">
+            <button type="button" data-button-type="remove-all-from-cart">{{lang 'categories.remove_all_from_cart'}}</button>
+        </div>
+        {{/if}}
+
+    </fieldset>
+
     <form action="{{urls.compare}}" method='POST' {{#if settings.data_tag_enabled}} data-list-name="Category: {{category.name}}" {{/if}} data-product-compare>
         {{#if theme_settings.product_list_display_mode '===' 'grid'}}
             {{#if settings.data_tag_enabled}}

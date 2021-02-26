@@ -1,6 +1,11 @@
 <nav class="navUser">
     {{> components/common/currency-selector}}
 
+        {{#if customer}}
+            <div class="banner--welcomeBack">
+                {{lang 'header.welcome_back' name=customer.name}}
+            </div>
+        {{/if}}
     <ul class="navUser-section navUser-section--alt">
         {{#if customer.store_credit.value '>' 0}}
             <li class="navUser-item">

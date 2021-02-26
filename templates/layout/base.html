@@ -41,7 +41,6 @@
 
         {{{head.scripts}}}
 
-
         {{~inject 'zoomSize' theme_settings.zoom_size}}
         {{~inject 'productSize' theme_settings.product_size}}
         {{~inject 'showAdminBar' theme_settings.show-admin-bar}}
@@ -66,6 +65,7 @@
 
         <script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>
         <script src="{{cdn 'assets/dist/theme-bundle.main.js'}}"></script>
+
         <script>
             {{!-- Exported in app.js --}}
             window.stencilBootstrap("{{page_type}}", {{jsContext}}).load();
