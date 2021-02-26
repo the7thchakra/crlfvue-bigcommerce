@@ -54,8 +54,8 @@ export default class Category extends CatalogPage {
 
     setUpImageRollover() {
         this.saveOriginalImage();
-        $('figure').on('mouseenter', (e) => this.showAlternateImage(e));
-        $('figure').on('mouseleave', (e) => this.showOriginalImage(e));
+        $('figure').mouseenter((e) => this.showAlternateImage(e));
+        $('figure').mouseleave((e) => this.showOriginalImage(e));
     }
 
     saveOriginalImage() {
